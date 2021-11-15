@@ -1,12 +1,23 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class lab1 {
     public static void main(String[] args) {
-        System.out.println("введите 4 числа типа int:");
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int d = sc.nextInt();
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int d = 0;
+        try {
+            System.out.println("введите 4 числа типа int:");
+            Scanner sc = new Scanner(System.in);
+            a = sc.nextInt();
+            b = sc.nextInt();
+            c = sc.nextInt();
+            d = sc.nextInt();
+            sc.close();
+        } catch (InputMismatchException e) {
+            System.out.println("ошибка ввода данных");
+            System.exit(1);
+        }
         if (a<=b & a<=c & a<=d ){
             System.out.println("наименьшее число - "+a);
         }
